@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/linear_layout_top"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btn_add_application"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="ADD Application"
+                    android:layout_gravity="center"
+                    android:textSize="18dp" />
+            </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_application_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:textSize="18dp" />
+                <TextView
+                    android:id="@+id/tv_no_applications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:text="No Applications Present"
+                    android:layout_gravity="center"
+                    android:textSize="18dp" />
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_below="@id/linear_layout_top"
+                android:id="@+id/linear_layout_below"
+                android:layout_width="wrap_content"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_app_package_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="Package Name:"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/et_app_package_name"
+                    android:layout_width="match_parent"
+                    android:textSize="18dp"
+                    android:layout_alignTop="@id/spinner_settings"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:hint="Enter Package Name here.."
+                    android:layout_margin="20dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_app_install_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="Install Type"
+                    android:textSize="18dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_app_install_type"
+                    android:layout_width="wrap_content"
+                    android:layout_alignTop="@id/spinner_settings"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_app_permission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="Default Permission Policy"
+                    android:textSize="18dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_app_permission"
+                    android:layout_width="wrap_content"
+                    android:layout_alignTop="@id/spinner_settings"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_app_disabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="20dp"
+                    android:layout_toStartOf="@id/switch_app_disabled"
+                    android:gravity="left"
+                    android:text="Disabled"
+                    android:textSize="18dp" />
+
+                <Switch
+                    android:id="@+id/switch_app_disabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_app_locktask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="20dp"
+                    android:layout_toStartOf="@id/switch_app_locktask"
+                    android:gravity="left"
+                    android:text="Locktask Mode"
+                    android:textSize="18dp" />
+
+                <Switch
+                    android:id="@+id/switch_app_locktask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_persistent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="20dp"
+                    android:layout_toStartOf="@id/switch_persistent"
+                    android:gravity="left"
+                    android:text="Persistent Preferred Activities"
+                    android:textSize="18dp" />
+
+                <Switch
+                    android:id="@+id/switch_persistent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_below="@id/linear_layout_below"
+                android:id="@+id/linear_layout_checkbox"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_category_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="20dp"
+                    android:layout_toLeftOf="@id/check_category_home"
+                    android:gravity="left"
+                    android:text="android.intent.category.HOME"
+                    android:textSize="15dp" />
+
+                <CheckBox
+                    android:id="@+id/check_category_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_category_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="20dp"
+                    android:layout_toStartOf="@id/check_category_default"
+                    android:gravity="left"
+                    android:text="android.intent.category.DEFAULT"
+                    android:textSize="15dp" />
+                <CheckBox
+                    android:id="@+id/check_category_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_category_launcher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="20dp"
+                    android:layout_toStartOf="@id/check_category_launcher"
+                    android:gravity="left"
+                    android:text="android.intent.category.LAUNCHER"
+                    android:textSize="15dp" />
+                <CheckBox
+                    android:id="@+id/check_category_launcher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_action_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="20dp"
+                    android:layout_toStartOf="@id/check_action_view"
+                    android:gravity="left"
+                    android:text="android.intent.action.VIEW"
+                    android:textSize="15dp" />
+                <CheckBox
+                    android:id="@+id/check_action_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_action_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="20dp"
+                    android:layout_toStartOf="@id/check_action_main"
+                    android:gravity="left"
+                    android:text="android.intent.action.MAIN"
+                    android:textSize="15dp" />
+                <CheckBox
+                    android:id="@+id/check_action_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+        </RelativeLayout>
+</ScrollView>
+</RelativeLayout>
